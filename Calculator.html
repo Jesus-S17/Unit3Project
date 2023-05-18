@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Calculator</h1>
+        <form>
+            <fieldset>
+                <div class="row">
+                    <div>
+                        <label for="firstNumber">First number</label>
+                        <input id="firstNumber" name="Enter_number" type="text">
+                    </div>
+                    <div>
+                        <label for="secondNumber">Second Number</label>
+                        <input id="secondNumber" name="second_number" type="text">
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="content">
+        <div class="row">
+            <h3>Symbols</h3>
+            <button id="1">+</button>
+            <button id="2" >-</button>
+            <button id="3">/</button>
+            <button id="4">*</button>
+            <button id="5">%</button>
+        </div>
+        <button id="clear">CLEAR</button>
+        <button id="calc">Calculator</button>
+        <p class="hidden"></p>
+    </div>
+</div>
+<script>
+    const firstNumber = document.getElementById('Enter_number');
+    const secondNumber = document.getElementById('second_number');
+    const ans = document.querySelector('p');
+    const calculateButton = document.getElementById('calc');
+    const clearButton = document.getElementById('clear');
+
+    calculateButton.addEventListener('click', function(e){
+        let
+    }
+</script>
+</body>
+</html>
