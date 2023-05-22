@@ -6,53 +6,68 @@
     <link href="style.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div class="container">
-    <div class="content">
-        <h3>Enter your name</h3>
-        <div class="row">
-            <div>
-                <label for="number">Enter Number</label>
-                <input type="text" id="number" name="first-name" style="width: 100px;">
-                <label for="last-name">Enter Number</label>
-                <input type="text" id="last-name" name="last-name" style="width: 100px;">
-                <div class="row">Calculator</div>
-                <button id="name-button">Calculator</button>
-            </div>
-        </div>
-        <div id="names"></div>
-    </div>
+<div>
+    <label for="num1">Enter Number</label>
+    <input id="num1" type="text" name="enter number" style="width:  100px;">
+
+    <label for="num2">Enter Number</label>
+    <input id="num2" type="text" name="enter number" style="width:  100px;">
+
     <div class="container">
         <div class="content">
             <div class="row">
                 <h3>Symbols</h3>
-                <button id="1">+</button>
-                <button id="2" >-</button>
-                <button id="3">/</button>
-                <button id="4">*</button>
-                <button id="5">%</button>
+                <button id="add">+</button>
+                <button id="multiplication">*</button>
+                <button id="division">/</button>
+                <button id="subtraction">-</button>
+                <button id="remainder">%</button>
+                <input type="text" id="result" placeholder="" readonly>
             </div>
             <button id="clear">CLEAR</button>
-            <button id="calc">Calculator</button>
             <p class="hidden"></p>
         </div>
     </div>
+</div>
     <script>
     function add() {
-        let num1 = parseFloat(document.getElementById("num1").value);
-        let num2 = parseFloat(document.getElementById("num2").value);
-        let result = num1 + num2;
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 + num2;
         document.getElementById("result").value = result;
     }
-    function subtract(){
-        let num1 = parseFloat((document.getElementById('num1').value);
-        let num2 = parseFloat(document.getElementById("num2").value);
-        let result = num1 - num2;
+
+    function difference() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 + num2;
+        document.getElementById("result").value = result;
+    }
+
+    function product(){
+        const num1 = parseFloat((document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 * num2;
+        document.getElementById("result").value = result;
+    }
+
+    function quotient(){
+        const num1 = parseFloat((document.getElementById('num1').value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 / num2;
+        document.getElementById("result").value = result;
+    }
+
+    function remainder() {
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 + num2;
         document.getElementById("result").value = result;
     }
 
     clearButton.addEventListener('click',function(e){
-        num1();
-        num2();
+        num1.value=" ";
+        num2.value=" ";
     });
 </script>
 </body>
