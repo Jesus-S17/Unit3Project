@@ -22,37 +22,30 @@
                 <button id="division">/</button>
                 <button id="subtraction">-</button>
                 <button id="remainder">%</button>
-                <input type="text" id="result" placeholder="" readonly>
+
             </div>
             <button id="clear">CLEAR</button>
-            <p class="hidden"></p>
+            <div id="history"></div>
         </div>
     </div>
 </div>
     <script>
-    function add() {
-        const num1 = parseFloat(document.getElementById("num1").value);
-        const num2 = parseFloat(document.getElementById("num2").value);
-        const result = num1 + num2;
-        document.getElementById("result").value = result;
-    }
+        const clearButton = document.getElementById('clear')
+        const history = document.getElementById('history')
+        const addButton = document.getElementById('add');
+        const subtractionButton = document.getElementById('subtraction');
+        const divisionButton = document.getElementById('division');
 
-    function difference() {
-        const num1 = parseFloat(document.getElementById("num1").value);
-        const num2 = parseFloat(document.getElementById("num2").value);
-        const result = num1 + num2;
-        document.getElementById("result").value = result;
-    }
 
-    function product(){
-        const num1 = parseFloat((document.getElementById('num1').value);
+    function multiplication(){
+        const num1 = parseFloat((document.getElementById('num1').value));
         const num2 = parseFloat(document.getElementById("num2").value);
         const result = num1 * num2;
         document.getElementById("result").value = result;
     }
 
     function quotient(){
-        const num1 = parseFloat((document.getElementById('num1').value);
+        const num1 = parseFloat((document.getElementById('num1').value));
         const num2 = parseFloat(document.getElementById("num2").value);
         const result = num1 / num2;
         document.getElementById("result").value = result;
@@ -66,9 +59,38 @@
     }
 
     clearButton.addEventListener('click',function(e){
-        num1.value=" ";
-        num2.value=" ";
+            num1.value=" ";
+            num2.value=" ";
+        });
+
+    addButton.addEventListener('click', function(e){
+        const num1 = parseFloat(document.getElementById("num1").value);
+        const num2 = parseFloat(document.getElementById("num2").value);
+        const result = num1 + num2;
+
+        const equation = document.createElement('h1');
+        equation.innerHTML = result;
+        history.appendChild( equation);
     });
+
+        subtractionButton.addEventListener('click', function(e){
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = num1 - num2;
+            const equation = document.createElement('h1');
+            equation.innerHTML = result;
+            history.appendChild( equation);
+        });
+
+       divisionButton.addEventListener('click', function(e){
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = num1 / num2;
+
+            const equation = document.createElement('h1');
+            equation.innerHTML = result;
+            history.appendChild( equation);
+        });
 </script>
 </body>
 </html>
