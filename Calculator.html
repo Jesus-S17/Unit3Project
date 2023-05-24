@@ -8,10 +8,10 @@
 <body>
 <div>
     <label for="num1">Enter Number</label>
-    <input id="num1" type="text" name="enter number" style="width:  100px;">
+    <input id="num1" type="text" name="enter number" style="width:  250px;">
 
     <label for="num2">Enter Number</label>
-    <input id="num2" type="text" name="enter number" style="width:  100px;">
+    <input id="num2" type="text" name="enter number" style="width:  250px;">
 
     <div class="container">
         <div class="content">
@@ -30,11 +30,13 @@
     </div>
 </div>
     <script>
-        const clearButton = document.getElementById('clear')
-        const history = document.getElementById('history')
+        const clearButton = document.getElementById('clear');
+        const history = document.getElementById('history');
         const addButton = document.getElementById('add');
         const subtractionButton = document.getElementById('subtraction');
         const divisionButton = document.getElementById('division');
+        const multiplicationButton = document.getElementById('multiplication');
+        const remainderButton = document.getElementById('remainder');
 
 
     function multiplication(){
@@ -77,12 +79,33 @@
             const num1 = parseFloat(document.getElementById("num1").value);
             const num2 = parseFloat(document.getElementById("num2").value);
             const result = num1 - num2;
+
             const equation = document.createElement('h1');
             equation.innerHTML = result;
             history.appendChild( equation);
         });
 
        divisionButton.addEventListener('click', function(e){
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = num1 / num2;
+
+            const equation = document.createElement('h1');
+            equation.innerHTML = result;
+            history.appendChild( equation);
+        });
+
+        multiplicationButton.addEventListener('click', function(e){
+            const num1 = parseFloat(document.getElementById("num1").value);
+            const num2 = parseFloat(document.getElementById("num2").value);
+            const result = num1 * num2;
+
+            const equation = document.createElement('h1');
+            equation.innerHTML = result;
+            history.appendChild( equation);
+        });
+
+      remainderButton.addEventListener('click', function(e){
             const num1 = parseFloat(document.getElementById("num1").value);
             const num2 = parseFloat(document.getElementById("num2").value);
             const result = num1 / num2;
